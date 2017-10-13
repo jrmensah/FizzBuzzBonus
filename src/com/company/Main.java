@@ -22,6 +22,7 @@ public class Main {
         int currentValue = 0;
         String answer;
         String FizzBuzz;
+        int secondValue;
 
 
         Scanner keyboard = new Scanner(System.in);
@@ -33,6 +34,8 @@ public class Main {
             System.out.println("Invalid Entry. Please enter a number greater than 1");
             currentValue = keyboard.nextInt();
         }
+        System.out.println("Enter a second number greater than 1");
+        secondValue = keyboard.nextInt();
 
         for (counter = 1; counter <= 100; counter++)
 
@@ -55,6 +58,13 @@ public class Main {
             }
             System.out.println(FizzBuzz);
         }
+        // Print the number of multiples of 7, 17, 23 and user input
+
+        System.out.printf( "The number of multiples of 7:   %d \n", +currentValue/7);
+        System.out.printf( "The number of multiples of 17:   %d \n", +currentValue/17);
+        System.out.printf( "The number of multiples of 23:   %d \n", +currentValue/23);
+        System.out.printf( "The number of multiples of user number:   %d \n", +currentValue/secondValue);
+
         for (counter = 1; counter < currentValue; counter++) {
 
             System.out.println("Would you like to enter another value?");
@@ -74,16 +84,12 @@ public class Main {
                 }
 
 
-                // Print the number of multiples of 7, 17, 23 and user input
-
-                System.out.printf( "The number of multiples of 7:   %d \n", +currentValue/7);
-                System.out.printf( "The number of multiples of 17:   %d \n", +currentValue/17);
-                System.out.printf( "The number of multiples of 23:   %d \n", +currentValue/23);
-                System.out.printf( "The number of multiples of user number:   %d \n", +currentValue/currentValue);
-
 
 
         }
+
+
     }
+
 }
 
