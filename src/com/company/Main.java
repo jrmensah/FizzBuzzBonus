@@ -7,7 +7,7 @@ package com.company;
  * "Buzz" for multiples of 5, and "FizzBuzz" for multiples of 3 and 5.
  *
  * Update- October 13, 2017:
- * The user will now be asked to input a number greater than 1 and count the number up to
+ * The user will now be asked to input a number greater than 1 and count up to
  * that number. The program will display the number of multiples of that number, plus
  * multiples of 7, 17 and 23 at the end of the program.
  */
@@ -20,41 +20,60 @@ public class Main {
 
         int counter = 1;
         int currentValue = 0;
+        String answer;
         String FizzBuzz;
 
 
         Scanner keyboard = new Scanner(System.in);
 
 
-            System.out.println("Enter a number greater than 1");
+        System.out.println("Enter a number greater than 1");
+        currentValue = keyboard.nextInt();
+        if (currentValue < 1) {
+            System.out.println("Invalid Entry. Please enter a number greater than 1");
             currentValue = keyboard.nextInt();
-            if (currentValue < 1) {
-                System.out.println("Invalid Entry. Please enter a number greater than 1");
+        }
+
+        for (counter = 1; counter <= 100; counter++)
+
+        {
+            FizzBuzz = "";
+
+            //Print "Fizz" for multiples of 3
+            if (counter % 3 == 0) {
+                FizzBuzz += "Fizz";
+            }
+
+            // Print "Buzz for multiples of 5
+            if (counter % 5 == 0) {
+                FizzBuzz += "Buzz";
+            }
+
+            //Convert to string value when displayed
+            if (counter % 3 != 0 && counter % 5 != 0) {
+                FizzBuzz = Integer.toString(counter);
+            }
+            System.out.println(FizzBuzz);
+        }
+        for (counter = 1; counter < currentValue; counter++) {
+
+            System.out.println("Would you like to enter another value?");
+            answer = keyboard.next();
+            keyboard.nextLine();
+
+            if(answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
+                System.out.println("Enter a number greater than 1");
                 currentValue = keyboard.nextInt();
+                keyboard.nextLine();
             }
-
-            for (counter = 1; counter <= currentValue; counter++)
-
-            {
-                FizzBuzz = "";
-
-                //Print "Fizz" for multiples of 3
-                if (counter % 3 == 0) {
-                    FizzBuzz += "Fizz";
+            else
+                {
+                    System.out.println("Thanks for playing!");
+                    keyboard.nextLine();
+                    System.out.println("");
                 }
 
-                // Print "Buzz for multiples of 5
-                if (counter % 5 == 0) {
-                    FizzBuzz += "Buzz";
-                }
 
-                //Convert to string value when displayed
-                if (counter % 3 != 0 && counter % 5 != 0) {
-                    FizzBuzz = Integer.toString(counter);
-                }
-                System.out.println(FizzBuzz);
-
-            }
                 // Print the number of multiples of 7, 17, 23 and user input
 
                 System.out.printf( "The number of multiples of 7:   %d \n", +currentValue/7);
@@ -66,33 +85,5 @@ public class Main {
 
         }
     }
+}
 
-//
-//                }
-//            }
-//
-//    }
-//
-//    }
-//
-//    }
-//}
-
-//            {
-////            //Print multiples of 7
-////            if (counter % 7 == 0) {
-////            System.out.println(counter % 7 == 0);
-////            }
-////            //Print multiples of 17
-////            if (counter % 17 == 0) {
-////            System.out.println(counter % 17 == 0);
-////            }
-////            //Print multiples of 23
-////            if (counter % 23 == 0) {
-////            System.out.println(counter % 23 == 0);
-////
-////            } //Print multiples of value the user entered
-////            if (counter % currentValue == 0) {
-////            System.out.println(counter % currentValue == 0);
-////            }
-////            }
